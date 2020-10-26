@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:ui' show Vertices;
+
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -234,6 +236,15 @@ class _BoardPainter extends CustomPainter {
     }
 
     board.forEach(drawBoardPoint);
+    //canvas.drawRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height), Paint()..color = Colors.pinkAccent);
+    //canvas.drawRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height), Paint()..color = Colors.pinkAccent);
+    /*
+    canvas.drawVertices(Vertices(VertexMode.triangles, <Offset>[
+      const Offset(0.0, 0.0),
+      const Offset(100.0, 100.0),
+      const Offset(0.0, 100.0),
+    ]), BlendMode.color, Paint()..color = Colors.pinkAccent);
+    */
   }
 
   // We should repaint whenever the board changes, such as board.selected.
